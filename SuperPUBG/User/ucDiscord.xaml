@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="SuperPUBG.User.ucDiscord"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SuperPUBG.User"
+             xmlns:cs="clr-namespace:SuperPUBG.CS"
+             xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+    
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBlock.xaml" />
+                <!-- throw in some extra colour for our floating action button -->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/MaterialDesignColor.Green.Named.Primary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+  
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <ListView x:Name="Discord_List" Grid.Row="1" Focusable="False" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Disabled" VerticalContentAlignment="Stretch" ItemsSource="{Binding DiscordLists}" HorizontalContentAlignment="Stretch" MouseDoubleClick="Discord_List_MouseDoubleClick">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="제목" DisplayMemberBinding="{Binding DiscordTitle}" Width="{Binding ElementName=colTitle, Path=ActualWidth}"/>
+                    <GridViewColumn x:Name="DiscordLink" Header="링크" DisplayMemberBinding="{Binding DiscordLink}"  Width="{Binding ElementName=colLink, Path=ActualWidth}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Grid Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <!--Width is bound to width of the first GridViewColumn -->
+                <ColumnDefinition Width="2*"/>
+                <!--Width is set to "Fill"-->
+                <ColumnDefinition Width="*"/>
+                <!--Correction Width-->
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <!--This is the hidden helper Field which is used to bind to, using the "Fill" column of the helper grid-->
+            <Grid Grid.Column="1" x:Name="colLink"/>
+            <Grid Grid.Column="0" x:Name="colTitle"/>
+        </Grid>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="txt_DiscordList" Text="최근 15개의 게시글만 불러옵니다." HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <Button Style="{StaticResource MaterialDesignFloatingActionLightButton}" Margin="32" Height="40" Width="40" Grid.Row="1"
+
+                    Command="{Binding DiscordCommand}"
+
+                    material:ButtonProgressAssist.IsIndicatorVisible="{Binding IsLoading}"
+
+                    material:ButtonProgressAssist.Value="{Binding LoadProgress}" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+
+            <!-- simple example of toggling/animating pack icon with a data trigger-->
+
+            <material:PackIcon Height="24" Width="24">
+                <material:PackIcon.Style>
+                    <Style TargetType="material:PackIcon" BasedOn="{StaticResource {x:Type material:PackIcon}}">
+                        <Setter Property="Kind" Value="Refresh" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsLoadComplete}" Value="True">
+                                <Setter Property="Kind" Value="Check" />
+                                <DataTrigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.8" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </DataTrigger.EnterActions>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </material:PackIcon.Style>
+            </material:PackIcon>
+        </Button>
+        
+    </Grid>
+</UserControl>

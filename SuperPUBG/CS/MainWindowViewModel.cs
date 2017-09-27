@@ -20,7 +20,7 @@ namespace SuperPUBG.CS
                 new MenuItem("Install",new ucInstall()),
                 new MenuItem("Mail", new ucMail()),
                 new MenuItem("Discord", new ucDiscord()),
-                new MenuItem("Board",new ucSetting())
+                //new MenuItem("Board",new ucSetting())
             };
 
         }

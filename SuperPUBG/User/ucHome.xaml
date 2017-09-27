@@ -24,161 +24,83 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <material:Card Width="460" Margin="0 8 0 0" HorizontalAlignment="Center">
-            <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="16">
+        <Grid Grid.Row="0" HorizontalAlignment="Center" Margin="0 45 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="45"/>
+            </Grid.RowDefinitions>
 
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+            <StackPanel Grid.ColumnSpan="2" Width="500" HorizontalAlignment="Center" Margin="0,0,0,30">
+                <Image Stretch="Uniform" ToolTip="Run PUBG" HorizontalAlignment="Center">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/Resources/pubglogo_s.png"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Source" Value="/Resources/pubglogo_s_MouseOver.png"/>
+                                    <Setter Property="Cursor" Value="Hand"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </StackPanel>
+            
+            <Border Grid.Row="1"  BorderThickness="0 0 2 0" BorderBrush="{DynamicResource MaterialDesignDivider}">
+                <material:PackIcon Kind="AccountSearch" Width="Auto" Height="Auto"/>
+            </Border>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="1 0 0 0" FontSize="13" material:HintAssist.Hint="배틀그라운드 닉네임" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        </Grid>
 
-                <Ellipse Width="80" Height="80" Cursor="Hand">
-                    <Ellipse.Fill>
-                        <ImageBrush ImageSource="/Resources/pubglogo.jpg" Stretch="Uniform"/>
-                    </Ellipse.Fill>
-                </Ellipse>
 
-                <StackPanel Grid.Column="1" Margin="24,0,0,0" VerticalAlignment="Center" Orientation="Vertical">
-                        <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-                            <TextBlock Style="{StaticResource MaterialDesignDisplay4TextBlock}" TextWrapping="WrapWithOverflow" FontSize="13" Text="PLAY BATTLEGROUNDS" FontFamily="Segoe UI Semibold"/>
-                            <material:PackIcon Kind="Verified" Margin="2,0,5,0" Foreground="#FF0051FF"/>
-                            <TextBlock Style="{StaticResource MaterialDesignDisplay1TextBlock}" TextWrapping="Wrap" FontSize="12" Text="@PUBATTLEGROUNDS" Foreground="Gray"/>
-                        </StackPanel>
 
-                        <TextBlock x:Name="tbTweet" Style="{StaticResource MaterialDesignBody2TextBlock}" FontSize="14" TextWrapping="Wrap">Tweet</TextBlock>
-                    </StackPanel>
-                </Grid>
-        </material:Card>
 
-        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled"
+
+
+
+
+        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled"
                       HorizontalAlignment="Center"
                       VerticalAlignment="Bottom"
-                      Margin="0 0 0 32">
+                      Margin="0 0 0 10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-            <Grid HorizontalAlignment="Center">
-                <StackPanel Orientation="Horizontal">
+                <material:Card Grid.Row="1" Width="Auto" Margin="1 8 1 1" HorizontalAlignment="Center">
+                    <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="16">
 
-                    <!--<material:Card Width="420" Margin="4 2 8 16" Height="270" material:ShadowAssist.ShadowDepth="Depth3">-->
-                        <Grid Margin="0 0 32 0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="100" />
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-                        <Image Stretch="Uniform" StretchDirection="Both" Margin="0,8,0,0" ToolTip="Run PUBG">
-                            <Image.Style>
-                                <Style TargetType="{x:Type Image}">
-                                    <Setter Property="Source" Value="/Resources/pubglogo_s.png"/>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Source" Value="/Resources/pubglogo_s_MouseOver.png"/>
-                                            <Setter Property="Cursor" Value="Hand"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Image.Style>
-                        </Image>
+                        <Ellipse Width="80" Height="80" Cursor="Hand">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="/Resources/pubglogo.jpg" Stretch="Uniform"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
 
-                            <Border Grid.Row="1">
-                                <Grid Margin="8">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Left">
-                                            <StackPanel Orientation="Horizontal">
-                                                <material:PackIcon Kind="Run" Foreground="Black" />
-                                                <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Foreground="Black">PUBG 실행</TextBlock>
-                                            </StackPanel>
-                                        </Button>
-                                        <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Right">
-                                            <StackPanel Orientation="Horizontal">
-                                                <material:PackIcon Kind="Folder" Foreground="Black" />
-                                                <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Foreground="Black">폴더 열기</TextBlock>
-                                            </StackPanel>
-                                        </Button>
-                                    </StackPanel>
-                                </Grid>
-                            </Border>
+                        <StackPanel Grid.Column="1" Margin="24,0,0,0" VerticalAlignment="Center" Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                <TextBlock Style="{StaticResource MaterialDesignDisplay4TextBlock}" TextWrapping="WrapWithOverflow" FontSize="13" Text="PLAY BATTLEGROUNDS" FontFamily="Segoe UI Semibold"/>
+                                <material:PackIcon Kind="Verified" Margin="2,0,5,0" Foreground="#FF0051FF"/>
+                                <TextBlock Style="{StaticResource MaterialDesignDisplay1TextBlock}" TextWrapping="Wrap" FontSize="12" Text="@PUBATTLEGROUNDS" Foreground="Gray"/>
+                            </StackPanel>
 
-                            <Border Grid.Row="2" BorderThickness="0 2 0 0" BorderBrush="{DynamicResource MaterialDesignDivider}">
-                                <Grid Margin="8">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <Button Style="{DynamicResource MaterialDesignFlatButton}">
-                                            <StackPanel Orientation="Horizontal">
-                                            <material:PackIcon Kind="Home" Foreground="Black"/>
-                                        </StackPanel>
-                                        </Button>
-
-                                        <Button Style="{DynamicResource MaterialDesignFlatButton}" >
-                                            <StackPanel Orientation="Horizontal">
-                                            <material:PackIcon Kind="Facebook" Foreground="DeepSkyBlue" Width="16" Height="16" />
-                                        </StackPanel>
-                                        </Button>
-
-                                        <Button Style="{DynamicResource MaterialDesignFlatButton}">
-                                            <StackPanel Orientation="Horizontal">
-                                            <material:PackIcon Kind="Twitter" Foreground="SkyBlue"/>
-                                        </StackPanel>
-                                        </Button>
-                                    </StackPanel>
-                                </Grid>
-                            </Border>
-
-                        </Grid>
-                        
-                    <!--</material:Card>-->
-
-                    <!--<material:Card Width="420" Margin="4 2 8 16" Height="270">-->
-                        <Grid Margin="16 0 0 0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="100" />
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-
-                            <Ellipse Width="100" Height="100" Margin="0 5 0 0">
-                                <Ellipse.Fill>
-                                    <ImageBrush ImageSource="/Resources/sherlocklogo.png" Stretch="Uniform"/>
-                                </Ellipse.Fill>
-                            </Ellipse>
-
-                            <Border Grid.Row="1">
-                                <Grid Margin="8">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Left">
-                                            <StackPanel Orientation="Horizontal">
-                                                <material:PackIcon Kind="ContactMail" Foreground="Black" />
-                                                <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Foreground="Black">Contact Me</TextBlock>
-                                            </StackPanel>
-                                        </Button>
-                                        <Button Style="{DynamicResource MaterialDesignFlatButton}" HorizontalAlignment="Right">
-                                            <StackPanel Orientation="Horizontal">
-                                                <material:PackIcon Kind="Twitter" Foreground="Black" />
-                                                <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Foreground="Black">Twitter</TextBlock>
-                                            </StackPanel>
-                                        </Button>
-                                    </StackPanel>
-                                </Grid>
-                            </Border>
-
-                            <Border Grid.Row="2" BorderThickness="0 2 0 0" BorderBrush="{DynamicResource MaterialDesignDivider}">
-                                <Grid Margin="8">
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <Button Style="{DynamicResource MaterialDesignFlatButton}">
-                                            <StackPanel Orientation="Horizontal">
-                                                <material:PackIcon Kind="Check" Foreground="Black"/>
-                                                <TextBlock Margin="8 0 0 0" VerticalAlignment="Center" Foreground="Black">최신 버전 확인</TextBlock>
-                                            </StackPanel>
-                                        </Button>
-                                    </StackPanel>
-                                </Grid>
-                            </Border>
-
-                        </Grid>
-
-                    <!--</material:Card>-->
-                </StackPanel>
+                            <TextBlock x:Name="tbTweet" Style="{StaticResource MaterialDesignBody2TextBlock}" FontSize="14" TextWrapping="Wrap">Tweet</TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </material:Card>
             </Grid>
         </ScrollViewer>
     </Grid>

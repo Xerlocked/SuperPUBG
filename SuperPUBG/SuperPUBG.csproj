@@ -84,7 +84,6 @@
     <Compile Include="CS\DiscordLoadViewModel.cs" />
     <Compile Include="CS\dwmDropShadow.cs" />
     <Compile Include="CS\GetDiscord.cs" />
-    <Compile Include="CS\HtmlRichTextBoxBehavior.cs" />
     <Compile Include="CS\ImageSourceList.cs" />
     <Compile Include="CS\mailBot.cs" />
     <Compile Include="CS\mailBot.elements.cs" />
@@ -94,13 +93,6 @@
     <Compile Include="CS\MenuItem.cs" />
     <Compile Include="CS\NotifyPropertyChangedExtension.cs" />
     <Compile Include="CS\Zoom.cs" />
-    <Compile Include="HtmlConverter\HtmlCssParser.cs" />
-    <Compile Include="HtmlConverter\HtmlFromXamlConverter.cs" />
-    <Compile Include="HtmlConverter\HtmlLexicalAnalyzer.cs" />
-    <Compile Include="HtmlConverter\HtmlParser.cs" />
-    <Compile Include="HtmlConverter\HtmlSchema.cs" />
-    <Compile Include="HtmlConverter\HtmlTokenType.cs" />
-    <Compile Include="HtmlConverter\HtmlToXamlConverter.cs" />
     <Compile Include="ImageViewer.xaml.cs">
       <DependentUpon>ImageViewer.xaml</DependentUpon>
     </Compile>
@@ -118,9 +110,6 @@
     </Compile>
     <Compile Include="User\ucMail.xaml.cs">
       <DependentUpon>ucMail.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="User\ucSetting.xaml.cs">
-      <DependentUpon>ucSetting.xaml</DependentUpon>
     </Compile>
     <Page Include="ImageViewer.xaml">
       <SubType>Designer</SubType>
@@ -155,10 +144,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="User\ucMail.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="User\ucSetting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

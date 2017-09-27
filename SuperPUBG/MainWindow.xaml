@@ -71,7 +71,7 @@
                                   HorizontalScrollBarVisibility="{Binding ElementName=MenuItemsListBox, Path=SelectedItem.HorizontalScrollBarVisibilityRequirement}"
                                   VerticalScrollBarVisibility="{Binding ElementName=MenuItemsListBox, Path=SelectedItem.VerticalScrollBarVisibilityRequirement}" 
                                   Padding="{Binding ElementName=MenuItemsListBox, Path=SelectedItem.MarginRequirement}">
-                        <ContentControl Content="{Binding ElementName=MenuItemsListBox, Path=SelectedItem.Content}" />
+                        <ContentControl Content="{Binding ElementName=MenuItemsListBox, Path=SelectedItem.Content}" HorizontalContentAlignment="Center" />
                     </ScrollViewer>
 
                     <material:Card Grid.Row="2" Background="{DynamicResource PrimaryHueMidBrush}"

@@ -13,7 +13,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="Super PUBG" Height="576" Width="1024" WindowStartupLocation="CenterOwner" Icon="Resources/SuperPUBG.ico"
+        Title="Super PUBG" Height="480" Width="800" WindowStartupLocation="CenterOwner" Icon="Resources/SuperPUBG.ico"
         MouseLeftButtonDown="Window_MouseLeftButtonDown" WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="False">
 
     
@@ -66,7 +66,7 @@
                         <RowDefinition Height="35"/>
                     </Grid.RowDefinitions>
                     
-                    <material:Snackbar Grid.Row="0" MessageQueue="{material:MessageQueue}" x:Name="MainSnackbar"/>
+                    <material:Snackbar Grid.Row="1" MessageQueue="{material:MessageQueue}" x:Name="MainSnackbar"/>
                     <ScrollViewer Grid.Row="1"
                                   HorizontalScrollBarVisibility="{Binding ElementName=MenuItemsListBox, Path=SelectedItem.HorizontalScrollBarVisibilityRequirement}"
                                   VerticalScrollBarVisibility="{Binding ElementName=MenuItemsListBox, Path=SelectedItem.VerticalScrollBarVisibilityRequirement}" 
@@ -76,8 +76,7 @@
 
                     <material:Card Grid.Row="2" Background="{DynamicResource PrimaryHueMidBrush}"
                         Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
-                        Height="35" Width="1026" Margin="-1,0,0,0"/>
-
+                        Height="35" Width="806" Margin="-1,0,0,0"/>
 
                 </Grid>
             </DockPanel>

@@ -25,14 +25,14 @@ namespace SuperPUBG.User
         {
             InitializeComponent();
 
-            var service = new TwitterService("GUILlchS8MQBz4n8Q7j3lTwaV", "i8SvtzxyDWOjXQW6uMMGhDzdAZpp85QAWGsJaDnezzxOiuXcdu");
-            service.AuthenticateWith("911950168785690625-KCpv9VZencc9orhNBS5kZ8mvFzmIodw", "WoKtgsr2N8RyZhMz3zImOLSgziCJL5aAaFHZPIHQhRtle");
-            var currentTweets = service.ListTweetsOnUserTimeline(new ListTweetsOnUserTimelineOptions { ScreenName = "PUBATTLEGROUNDS", Count = 1, });
+            //var service = new TwitterService("GUILlchS8MQBz4n8Q7j3lTwaV", "i8SvtzxyDWOjXQW6uMMGhDzdAZpp85QAWGsJaDnezzxOiuXcdu");
+            //service.AuthenticateWith("911950168785690625-KCpv9VZencc9orhNBS5kZ8mvFzmIodw", "WoKtgsr2N8RyZhMz3zImOLSgziCJL5aAaFHZPIHQhRtle");
+            //var currentTweets = service.ListTweetsOnUserTimeline(new ListTweetsOnUserTimelineOptions { ScreenName = "PUBATTLEGROUNDS", Count = 1, });
 
-            foreach (var tweet in currentTweets)
-            {
-                tbTweet.Text = tweet.Text;
-            }
+            //foreach (var tweet in currentTweets)
+            //{
+            //    tbTweet.Text = tweet.Text;
+            //}
         }
     }
 }

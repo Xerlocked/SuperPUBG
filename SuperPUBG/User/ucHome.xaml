@@ -56,21 +56,14 @@
             <Border Grid.Row="1"  BorderThickness="0 0 2 0" BorderBrush="{DynamicResource MaterialDesignDivider}">
                 <material:PackIcon Kind="AccountSearch" Width="Auto" Height="Auto"/>
             </Border>
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="1 0 0 0" FontSize="13" material:HintAssist.Hint="배틀그라운드 닉네임" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="1" FontSize="13" material:HintAssist.Hint="배틀그라운드 닉네임" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         </Grid>
-
-
-
-
-
-
-
 
         <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled"
                       HorizontalAlignment="Center"
                       VerticalAlignment="Bottom"
                       Margin="0 0 0 10">
-            <Grid>
+            <!--<Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
@@ -101,7 +94,7 @@
                         </StackPanel>
                     </Grid>
                 </material:Card>
-            </Grid>
+            </Grid>-->
         </ScrollViewer>
     </Grid>
     

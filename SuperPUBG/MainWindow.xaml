@@ -56,7 +56,7 @@
                                 <material:PackIcon Kind="WindowClose"/>
                             </Button>
                         </StackPanel>
-                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" Margin="110 0 0 0">Super PUBG</TextBlock>
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" Margin="111 0 0 0">Super PUBG</TextBlock>
                     </DockPanel>
                 </material:ColorZone>
                 <Grid>

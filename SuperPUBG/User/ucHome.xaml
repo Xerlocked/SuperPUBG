@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:SuperPUBG.User"
              xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="500">
+             d:DesignHeight="800" d:DesignWidth="500">
+    
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -29,15 +30,15 @@
 
         <Grid Grid.Row="0" HorizontalAlignment="Center" Margin="0 45 0 0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="32"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="45"/>
+                <RowDefinition Height="32"/>
             </Grid.RowDefinitions>
 
-            <StackPanel Grid.ColumnSpan="2" Width="500" HorizontalAlignment="Center" Margin="0,0,0,30">
+            <StackPanel Grid.ColumnSpan="2" Width="380" HorizontalAlignment="Center" Margin="10,-10,0,30">
                 <Image Stretch="Uniform" ToolTip="Run PUBG" HorizontalAlignment="Center">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
@@ -53,49 +54,169 @@
                 </Image>
             </StackPanel>
             
-            <Border Grid.Row="1"  BorderThickness="0 0 2 0" BorderBrush="{DynamicResource MaterialDesignDivider}">
+            <Border Grid.Row="1"  BorderThickness="2 2 2 2" BorderBrush="{DynamicResource MaterialDesignDivider}">
                 <material:PackIcon Kind="AccountSearch" Width="Auto" Height="Auto"/>
             </Border>
-            <TextBox Grid.Row="1" Grid.Column="1" FontSize="13" material:HintAssist.Hint="배틀그라운드 닉네임" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+            <Border Grid.Row="1" Grid.Column="1" BorderThickness="2 2 2 2" BorderBrush="{DynamicResource MaterialDesignDivider}">
+                <TextBox Grid.Row="1" Grid.Column="1" FontSize="13" material:HintAssist.Hint="배틀그라운드 닉네임" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            </Border>
         </Grid>
 
-        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled"
-                      HorizontalAlignment="Center"
-                      VerticalAlignment="Bottom"
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden"
+                      HorizontalAlignment="Stretch"
                       Margin="0 0 0 10">
-            <!--<Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+            <WrapPanel HorizontalAlignment="Center">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
-                <material:Card Grid.Row="1" Width="Auto" Margin="1 8 1 1" HorizontalAlignment="Center">
-                    <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="16">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}" Text="Player Name"/>
+                    </StackPanel>
 
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,18,0,0">
+                        <material:Card Width="420" Height="105" Padding="5" Margin="0 0 0 20">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="60"/>
+                                </Grid.ColumnDefinitions>
 
-                        <Ellipse Width="80" Height="80" Cursor="Hand">
-                            <Ellipse.Fill>
-                                <ImageBrush ImageSource="/Resources/pubglogo.jpg" Stretch="Uniform"/>
-                            </Ellipse.Fill>
-                        </Ellipse>
+                                <TextBlock Style="{StaticResource MaterialDesignDisplay1TextBlock}" Foreground="White" Text="Solo" HorizontalAlignment="Center" />
 
-                        <StackPanel Grid.Column="1" Margin="24,0,0,0" VerticalAlignment="Center" Orientation="Vertical">
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-                                <TextBlock Style="{StaticResource MaterialDesignDisplay4TextBlock}" TextWrapping="WrapWithOverflow" FontSize="13" Text="PLAY BATTLEGROUNDS" FontFamily="Segoe UI Semibold"/>
-                                <material:PackIcon Kind="Verified" Margin="2,0,5,0" Foreground="#FF0051FF"/>
-                                <TextBlock Style="{StaticResource MaterialDesignDisplay1TextBlock}" TextWrapping="Wrap" FontSize="12" Text="@PUBATTLEGROUNDS" Foreground="Gray"/>
-                            </StackPanel>
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Foreground="Gray" Text="Rating"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" HorizontalAlignment="Center" Foreground="White">9999</TextBlock>
+                                </StackPanel>
 
-                            <TextBlock x:Name="tbTweet" Style="{StaticResource MaterialDesignBody2TextBlock}" FontSize="14" TextWrapping="Wrap">Tweet</TextBlock>
-                        </StackPanel>
-                    </Grid>
-                </material:Card>
-            </Grid>-->
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Foreground="Gray" Text="Win Rate" HorizontalAlignment="Center"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" HorizontalAlignment="Center" Foreground="White">100%</TextBlock>
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="3">
+                                    <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Foreground="Gray" Text="Top10 Rate" HorizontalAlignment="Center"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" HorizontalAlignment="Center" Foreground="White">100%</TextBlock>
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="4">
+                                    <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Foreground="Gray" Text="K/D" HorizontalAlignment="Center"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" HorizontalAlignment="Center" Foreground="White">0</TextBlock>
+                                </StackPanel>
+
+                                <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody2TextBlock}" Foreground="YellowGreen">1st</TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignTitleTextBlock}" Foreground="Gray" Text="Play"/>
+                                <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody2TextBlock}" Foreground="White" Text="0"/>
+                                <TextBlock Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignTitleTextBlock}" Foreground="Gray" Text="AVG DMG"/>
+                                <TextBlock Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody2TextBlock}" Foreground="White" Text="0"/>
+                            </Grid>
+                        </material:Card>
+
+                        <material:Card Width="420" Height="105" Padding="5" Margin="0 0 0 20">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="60"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Style="{StaticResource MaterialDesignDisplay1TextBlock}" Foreground="White" HorizontalAlignment="Center" Text="Duo" />
+
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Foreground="Gray" Text="Rating"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" HorizontalAlignment="Center" Foreground="White">9999</TextBlock>
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Foreground="Gray" Text="Win Rate" HorizontalAlignment="Center"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" HorizontalAlignment="Center" Foreground="White">100%</TextBlock>
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="3">
+                                    <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Foreground="Gray" Text="Top10 Rate" HorizontalAlignment="Center"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" HorizontalAlignment="Center" Foreground="White">100%</TextBlock>
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="4">
+                                    <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Foreground="Gray" Text="K/D" HorizontalAlignment="Center"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" HorizontalAlignment="Center" Foreground="White">0</TextBlock>
+                                </StackPanel>
+
+                                <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody2TextBlock}" Foreground="YellowGreen">1st</TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignTitleTextBlock}" Foreground="Gray" Text="Play"/>
+                                <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody2TextBlock}" Foreground="White" Text="0"/>
+                                <TextBlock Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignTitleTextBlock}" Foreground="Gray" Text="AVG DMG"/>
+                                <TextBlock Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody2TextBlock}" Foreground="White" Text="0"/>
+                            </Grid>
+                        </material:Card>
+
+                        <material:Card Width="420" Height="105" Padding="5" Margin="0 0 0 20">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="60"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Style="{StaticResource MaterialDesignHeadlineTextBlock}" Foreground="White" Text="Squad" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Foreground="Gray" Text="Rating"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" HorizontalAlignment="Center" Foreground="White">9999</TextBlock>
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="2">
+                                    <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Foreground="Gray" Text="Win Rate" HorizontalAlignment="Center"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" HorizontalAlignment="Center" Foreground="White">100%</TextBlock>
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="3">
+                                    <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Foreground="Gray" Text="Top10 Rate" HorizontalAlignment="Center"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" HorizontalAlignment="Center" Foreground="White">100%</TextBlock>
+                                </StackPanel>
+
+                                <StackPanel Grid.Column="4">
+                                    <TextBlock Style="{StaticResource MaterialDesignTitleTextBlock}" Foreground="Gray" Text="K/D" HorizontalAlignment="Center"/>
+                                    <TextBlock Grid.Row="1" Style="{StaticResource MaterialDesignBody2TextBlock}" HorizontalAlignment="Center" Foreground="White">0</TextBlock>
+                                </StackPanel>
+
+                                <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody2TextBlock}" Foreground="YellowGreen">1st</TextBlock>
+                                <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignTitleTextBlock}" Foreground="Gray" Text="Play"/>
+                                <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody2TextBlock}" Foreground="White" Text="0"/>
+                                <TextBlock Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignTitleTextBlock}" Foreground="Gray" Text="AVG DMG"/>
+                                <TextBlock Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource MaterialDesignBody2TextBlock}" Foreground="White" Text="0"/>
+                            </Grid>
+                        </material:Card>
+
+                    </StackPanel>
+                </Grid>
+
+
+            </WrapPanel>
         </ScrollViewer>
+        
     </Grid>
     
 </UserControl>
